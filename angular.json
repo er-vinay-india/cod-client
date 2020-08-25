@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cod-client"
+    }
+  },
+  "defaultProject": "cod-client",
+  "cli": {
+    "analytics": false
+  }
 }
