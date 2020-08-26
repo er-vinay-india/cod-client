@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
     password: new FormControl('')
   });
 
-  user;
+  user: any;
 
   constructor(private configService: ConfigService) { }
 
@@ -33,16 +33,32 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    alert(this.signupForm.value.password);
+    this.getUserDetails();
+    return false;
+    let post_data = {
+      first_name: this.signupForm.value.firstName,
+      last_name: this.signupForm.value.lastName,
+      email: this.signupForm.value.email,
+      password: this.signupForm.value.password
+    };
+
+    this.configService.addUser(post_data).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    )
   }
 
   getUserDetails() {
     this.configService.getUserDetails()
     .subscribe(
-      (data) => this.user
+      (data) => {
+        this.user = data;
+        console.log(this.user);
+      }
     );
 
-    console.log(this.user);
+    
   }
 
 }

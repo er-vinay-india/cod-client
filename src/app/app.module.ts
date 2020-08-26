@@ -25,7 +25,6 @@ import { OrderPageComponent } from './order-page/order-page.component';
 import { OtherFooterComponent } from './other-footer/other-footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
-import { AuthinComponent } from './authin/authin.component';
 
 
 @NgModule({
@@ -50,7 +49,6 @@ import { AuthinComponent } from './authin/authin.component';
     OrderPageComponent,
     OtherFooterComponent,
     SignupComponent,
-    AuthinComponent,
     SigninComponent,
   ],
   imports: [

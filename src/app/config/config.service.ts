@@ -13,10 +13,16 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
 
   getUserDetails() {
-    return this.http.get(environment.apiUrl + 'user/all')
+    return this.http.get(environment.apiUrl + 'product/all')
     .pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
+    );
+  }
+
+  addUser(post_data: any) {
+    return this.http.post(environment.apiUrl + 'user', post_data).pipe(
+      catchError(this.handleError)
     );
   }
 

@@ -23,3 +23,10 @@
     <button type="submit">Submit</button>
   
   </form>
+
+  <div>
+    <h1 *ngFor="let product of user.result.products">
+      {{  product.title }} | {{  product.quantity }} | {{  product.price }}
+
+    </h1>
+  </div>
