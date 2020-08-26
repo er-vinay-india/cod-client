@@ -1,0 +1,7 @@
+.footer, .footer-list-item {
+    background-color: #84A9AC;
+    color: #ffffff;
+ }
+ .list-group-flush>.list-group-item {
+    border-width: 0 0 0px;
+}

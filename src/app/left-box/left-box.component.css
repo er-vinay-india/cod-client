@@ -1,0 +1,10 @@
+.left-box {
+    background-color: chocolate;
+    color: white;
+    padding-left: 0px;
+}
+
+.left-box-desc {
+    padding: 120px 20px 20px 20px;
+    text-align: right;
+}
