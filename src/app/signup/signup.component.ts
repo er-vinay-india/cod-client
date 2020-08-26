@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ConfigService } from './../config/config.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,23 +9,40 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  profileForm = new FormGroup({
+  signupForm = new FormGroup({
     firstName: new FormControl(''),
-    lastName: new FormControl('')
-   // email: new FormControl(''),
-    //password: new FormControl('')
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl('')
   });
 
-  constructor() { }
+  user;
+
+  constructor(private configService: ConfigService) { }
 
   ngOnInit(): void {
 
   }
 
-  addUser() {
-    this.profileForm.patchValue({
-      firstName: 'Devu'
+  adduser() {
+    this.signupForm.patchValue({
+      firstName: "Devu",
+      lastName: "Shivhare",
+      email: "divyanshu.shivhare32@gmail.com"
     });
+  }
+
+  onSubmit() {
+    alert(this.signupForm.value.password);
+  }
+
+  getUserDetails() {
+    this.configService.getUserDetails()
+    .subscribe(
+      (data) => this.user
+    );
+
+    console.log(this.user);
   }
 
 }

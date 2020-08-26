@@ -4,8 +4,8 @@
             NEWSLETTER SUBSCRIPTION
         </h3>
         <nav class="navbar navbar-expand-sm justify-content-center">
-            <form class="form-inline" action="/action_page.php">
-                <input class="form-control mr-sm-2" type="text" placeholder="Email Address">
+            <form class="form-inline" [formGroup]="newsletterForm">
+                <input class="form-control mr-sm-2" type="text" placeholder="Email Address" formControlName="email">
                 <button class="btn btn-success" type="submit">Submit</button>
             </form>
         </nav>

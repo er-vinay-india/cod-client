@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,7 @@ import { OrderPageComponent } from './order-page/order-page.component';
 import { OtherFooterComponent } from './other-footer/other-footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
+import { AuthinComponent } from './authin/authin.component';
 
 
 @NgModule({
@@ -48,10 +50,12 @@ import { SigninComponent } from './signin/signin.component';
     OrderPageComponent,
     OtherFooterComponent,
     SignupComponent,
-    //SigninComponent,
+    AuthinComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
