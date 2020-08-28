@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product-list',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  product: string;
-products = [];
+  products = [];
+
+  productListForm = new FormGroup({
+    product_name: new FormControl('')
+  });
 
   constructor() {
   }
@@ -16,9 +20,12 @@ products = [];
   ngOnInit(): void {
   }
 
-  onClick(){
-    this.products.push({name: this.product});
-  this.product = '';
-}
+  onClick() {
+    this.products.push({ 
+      name: this.productListForm.value.product_name
+    });
+
+    this.productListForm.value.product_name = '';
+  }
 
 }

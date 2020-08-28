@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from './../config/config.service';
 
 @Component({
   selector: 'app-upcoming-box',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingBoxComponent implements OnInit {
 
-  constructor() { }
+  upcomingProducts: any;
+
+  constructor(private configService: ConfigService) { }
 
   ngOnInit(): void {
+    this.getUpcomingProducts();
   }
 
+  getUpcomingProducts() {
+    this.configService.getUpcomingProducts()
+    .subscribe(
+      (data) => {
+        this.upcomingProducts = data;
+      }
+    );
+  }
 }

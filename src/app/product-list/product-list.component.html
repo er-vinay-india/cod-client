@@ -1,22 +1,23 @@
 <div class="cod-cotainer-fluid ">
     <app-header></app-header>
     <h2> Product list </h2>
- 
     <div class="row">
         <div class="col-xs-6 col-md-4">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="enter products" [(ngModel)]="product" />
-                <div class="input-group-btn">
-                    <button class="btn btn-primary" type="button" (click)="onClick()">
-                        <span class="glyphicon glyphicon-ok"></span>
-                     </button>
+            <form [formGroup]="productListForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter Product" formControlName="product_name" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" type="button" (click)="onClick()">
+                            Submit
+                         </button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <ul class="list-group">
         <li *ngFor="let product of products" class="list-group-item">
-            <span> {{ product.name }} </span>
+            <span *ngIf="product.name"> {{ product.name }} </span>
         </li>
     </ul>
     <app-other-footer></app-other-footer>

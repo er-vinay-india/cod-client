@@ -1,13 +1,14 @@
 .right-box {
-    background-color: aliceblue;
+    background-color: #C0A886;
     color: black;
-    padding-right: 0px;
-    margin-right: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .right-box-desc {
     padding: 120px 0px 20px 20px;
     text-align: left;
+    font-family: 'Tajawal', sans-serif;
 }
 .col-sm-3{
     padding-right: 0px;

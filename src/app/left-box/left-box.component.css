@@ -1,10 +1,12 @@
 .left-box {
-    background-color: chocolate;
+    background-color: #593820;
     color: white;
-    padding-left: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .left-box-desc {
     padding: 120px 20px 20px 20px;
     text-align: right;
+    font-family: 'Tajawal', sans-serif;
 }

@@ -33,8 +33,6 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    this.getUserDetails();
-    return false;
     let post_data = {
       first_name: this.signupForm.value.firstName,
       last_name: this.signupForm.value.lastName,
@@ -48,17 +46,4 @@ export class SignupComponent implements OnInit {
       }
     )
   }
-
-  getUserDetails() {
-    this.configService.getUserDetails()
-    .subscribe(
-      (data) => {
-        this.user = data;
-        console.log(this.user);
-      }
-    );
-
-    
-  }
-
 }
