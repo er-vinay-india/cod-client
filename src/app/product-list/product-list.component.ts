@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { ConfigService } from './../config/config.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,24 +8,21 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ProductListComponent implements OnInit {
 
-  products = [];
-
-  productListForm = new FormGroup({
-    product_name: new FormControl('')
-  });
-
-  constructor() {
+    products: any;
+  
+    constructor(private configService: ConfigService) { }
+  
+    ngOnInit(): void {
+      this.getUpcomingProducts();
+    }
+  
+    getUpcomingProducts() {
+      this.configService.getUpcomingProducts()
+      .subscribe(
+        (data) => {
+          this.products = data;
+        }
+      );
+    }
   }
-
-  ngOnInit(): void {
-  }
-
-  onClick() {
-    this.products.push({ 
-      name: this.productListForm.value.product_name
-    });
-
-    this.productListForm.value.product_name = '';
-  }
-
-}
+  

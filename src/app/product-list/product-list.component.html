@@ -1,24 +1,52 @@
-<div class="cod-cotainer-fluid ">
-    <app-header></app-header>
-    <h2> Product list </h2>
+<app-header-inner></app-header-inner>
+<div class="container-fluid">
     <div class="row">
-        <div class="col-xs-6 col-md-4">
-            <form [formGroup]="productListForm">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Enter Product" formControlName="product_name" />
-                    <div class="input-group-btn">
-                        <button class="btn btn-primary" type="button" (click)="onClick()">
-                            Submit
-                         </button>
+        <div class="col-sm-3">
+            <div class="container">
+
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="container">
+                <h3>Product List</h3>
+                <p>All Variety</p>
+                <div class="row">
+                    <div class="col-sm-4 mb-5" *ngFor="let product of products.result.products">
+                        <div class="card">
+                            <img class="card-img-top" src="assets/img/1.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">{{product.title}}</h4>
+                                <p class="card-text">Rs {{product.price}}</p>
+                                <a routerLink="/product/{{product.guid}}" class="btn btn-primary col-sm-5 mr-2">View More</a>
+                                <a href="#" class="btn btn-primary col-sm-5 ml-2">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-5" *ngFor="let product of products.result.products">
+                        <div class="card">
+                            <img class="card-img-top" src="assets/img/1.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Some example text some example text. John Doe is an architect and
+                                    engineer</p>
+                                <a href="#" class="btn btn-primary">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-5" *ngFor="let product of products.result.products">
+                        <div class="card">
+                            <img class="card-img-top" src="assets/img/1.png" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">John Doe</h4>
+                                <p class="card-text">Some example text some example text. John Doe is an architect and
+                                    engineer</p>
+                                <a href="#" class="btn btn-primary">Buy Now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-    <ul class="list-group">
-        <li *ngFor="let product of products" class="list-group-item">
-            <span *ngIf="product.name"> {{ product.name }} </span>
-        </li>
-    </ul>
-    <app-other-footer></app-other-footer>
 </div>
+<app-footer></app-footer>
