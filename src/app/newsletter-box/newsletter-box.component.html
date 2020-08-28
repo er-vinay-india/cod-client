@@ -1,14 +1,10 @@
-<div class="container-fluid newsletter-box">
-    <div class="container pt-3 pb-3">
-        <h3 class="diplay-3 text-center">
-            NEWSLETTER SUBSCRIPTION
-        </h3>
-        <nav class="navbar navbar-expand-sm justify-content-center">
-            <form class="form-inline" [formGroup]="newsletterForm">
-                <input class="form-control mr-sm-2" type="text" placeholder="Email Address" formControlName="email">
-                <button class="btn btn-success" type="submit">Submit</button>
-            </form>
-        </nav>
-    </div>
-</div>
+<nav class="navbar navbar-expand-sm">
+    <form [formGroup]="newsletterForm">
+        <div class="form-group">
+            <label for="subscriber_email">NEWSLETTER SUBSCRIPTION</label>
+            <input class="form-control mr-sm-2" type="text" placeholder="Email Address" formControlName="email">
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</nav>
 
