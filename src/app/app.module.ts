@@ -26,6 +26,7 @@ import { OtherFooterComponent } from './other-footer/other-footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { HeaderInnerComponent } from './header-inner/header-inner.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     SignupComponent,
     SigninComponent,
     ProductListComponent,
+    HeaderInnerComponent,
   ],
   imports: [
     BrowserModule,

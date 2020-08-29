@@ -1,11 +1,10 @@
 .cod-header {
-    position: fixed;
     color: #ffffff;
     z-index: 2;
     box-shadow: none;
     transition: background-color 1s;
     transition: box-shadow 1s;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(89,56,32,1);
 }
 
 #cod-brand {
@@ -17,6 +16,5 @@
 a {
     color: #ffffff;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-family: 'Tajawal', sans-serif;
 }
