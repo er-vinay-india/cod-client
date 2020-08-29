@@ -8,13 +8,14 @@
 }
 
 #cod-brand {
-    color: #ffffff;
+    color: #C0A886;
     font-size: 24px;
     transition: font-size 2s;
 }
 
 a {
-    color: #ffffff;
+    color: #C0A886;
     font-size: 18px;
-    font-family: 'Tajawal', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
