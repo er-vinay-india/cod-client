@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ConfigService } from './../config/config.service';
 
 @Component({
   selector: 'app-signin',
@@ -13,13 +14,24 @@ export class SigninComponent implements OnInit {
     password: new FormControl('')
   });
 
-  constructor() { }
+  constructor(
+    private configService: ConfigService
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    // will submit a form
+    let post_data = {
+      email: this.authForm.value.email,
+      password: this.authForm.value.password
+    };
+
+    this.configService.loginUser(post_data).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    );
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from './../config/config.service';
 
 @Component({
   selector: 'app-header-inner',
@@ -7,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderInnerComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private configService: ConfigService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  logout() {
+    this.configService.logoutUser().subscribe(
+      (data) => {
+        console.log(data);
+      }
+    )
+  }
 }
 
 // When the user scrolls down 50px from the top of the document, resize the header's font size

@@ -27,6 +27,7 @@ import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { HeaderInnerComponent } from './header-inner/header-inner.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { HeaderInnerComponent } from './header-inner/header-inner.component';
     SigninComponent,
     ProductListComponent,
     HeaderInnerComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

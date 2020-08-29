@@ -12,6 +12,31 @@ export class ConfigService {
 
   constructor(private http: HttpClient) { }
 
+  // Register User
+  registerUser(post_data: any) {
+    return this.http.post(environment.apiUrl + 'registration', post_data).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  // Login User
+  loginUser(post_data: any) {
+    return this.http.post(environment.apiUrl + 'login', post_data).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  // Logout User
+  logoutUser() {
+    let post_data = [];
+    return this.http.post(environment.apiUrl + 'logout', post_data).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+
+
+
   getUserDetails() {
     return this.http.get(environment.apiUrl + 'user/all')
     .pipe(

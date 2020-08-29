@@ -21,17 +21,8 @@ export class SignupComponent implements OnInit {
   constructor(private configService: ConfigService) { }
 
   ngOnInit(): void {
-
   }
-
-  adduser() {
-    this.signupForm.patchValue({
-      firstName: "Devu",
-      lastName: "Shivhare",
-      email: "divyanshu.shivhare32@gmail.com"
-    });
-  }
-
+  
   onSubmit() {
     let post_data = {
       first_name: this.signupForm.value.firstName,
@@ -40,7 +31,7 @@ export class SignupComponent implements OnInit {
       password: this.signupForm.value.password
     };
 
-    this.configService.addUser(post_data).subscribe(
+    this.configService.registerUser(post_data).subscribe(
       (data) => {
         console.log(data);
       }
