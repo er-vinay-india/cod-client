@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ConfigService } from './../config/config.service';
 
 @Component({
@@ -9,6 +10,12 @@ import { ConfigService } from './../config/config.service';
 export class ProductListComponent implements OnInit {
 
     products: any;
+    
+    productFilterForm = new FormGroup({
+      productName: new FormControl(''),
+      productPrice: new FormControl(''),
+      productGuid: new FormControl('')
+    });
   
     constructor(private configService: ConfigService) { }
   

@@ -1,54 +1,45 @@
-<div class="cod-cotainer-fluid ">
-  <app-header></app-header>
-  <div class="row centered-form">
-    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Signup Form <small>It's free!</small></h3>
-        </div>
-        <div class="panel-body">
-          <form role="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-            <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <input type="text" formControlName="firstName" id="first_name" class="form-control input-sm"
-                    placeholder="First Name">
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <input type="text" formControlName="lastName" id="last_name" class="form-control input-sm"
-                    placeholder="Last Name">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="email" formControlName="email" id="email" class="form-control input-sm"
-                placeholder="Email Address">
-            </div>
-            <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <input type="password" formControlName="password" id="password" class="form-control input-sm"
-                    placeholder="Password">
-                </div>
-              </div>
-            </div>
-
-            <button type="submit">Submit</button>
-
-          </form>
-
-          <div>
-            <h1 *ngFor="let product of user.result.products">
-              {{  user.first_name }} | {{  user.last_name }} | {{  user.email }}
-
-            </h1>
-          </div>
-
-        </div>
-      </div>
+<app-header-inner></app-header-inner>
+<div class="container-fluid">
+  <div class="container mt-5 mb-5">
+    <h3 class="text-center">Sign Up</h3>
+    <form class="was-validated" role="form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Firstname:</label>
+      <input formControlName="first_name" id="first_name" type="text" class="form-control" placeholder="Enter Firstname"
+        required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
     </div>
+    <div class="form-group">
+      <label for="last_name">Lastname:</label>
+      <input formControlName="lastName" id="last_name" type="text" class="form-control" placeholder="Enter Lastname"
+        required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" formControlName="email" id="email" type="email" class="form-control"
+        placeholder="Enter Email" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input formControlName="password" id="password" type="password" class="form-control" placeholder="Enter Password"
+        required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember" required> I agree on <a href="#">Terms & Condition</a>.
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Check this checkbox to continue.</div>
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Register Now</button>
+    </form>
   </div>
-  <app-other-footer></app-other-footer>
 </div>
+<app-footer></app-footer>

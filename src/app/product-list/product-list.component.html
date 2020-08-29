@@ -1,9 +1,27 @@
 <app-header-inner></app-header-inner>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-sm-3">
-            <div class="container">
-
+            <div class="container product-filter">
+                <h3>
+                    Search Product
+                </h3>
+                <p>Search Product Here</p>
+                <form [formGroup]="productFilterForm">
+                    <div class="form-group">
+                      <label for="product-name">Product Name:</label>
+                      <input formControlName="productName" type="text" class="form-control" id="product-name" placeholder="Product Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="product-price">Product Price:</label>
+                      <input formControlName="productPrice" type="text" class="form-control" id="product-price" placeholder="Product Price">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-id">Product ID:</label>
+                        <input formControlName="productGuid" type="text" class="form-control" id="product-id" placeholder="Product Price">
+                      </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                  </form>
             </div>
         </div>
         <div class="col-sm-9">

@@ -1,6 +1,30 @@
-<form [formGroup]="authForm" (ngSubmit)="onSubmit()">
-  <!-- Login Form -->
-  <input type="text" formControlName="email">
-  <input type="text" formControlname="password">
-  <button type="submit">Submit</button>
-</form>
+<app-header-inner></app-header-inner>
+<div class="container-fluid">
+  <div class=" mt-5 mb-5 row">
+    <div class="col-sm-8">
+      
+    </div>
+    <div class="col-sm-4">
+      <h3 class="text-center">Signin</h3>
+    <form class="was-validated" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input formControlName="email" type="text" class="form-control" id="email" placeholder="Enter Email" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input formControlName="password" type="password" class="form-control" id="password" placeholder="Enter Password" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="form-group text-right">
+        <a href="#">Forget Password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary">Signin</button>
+    </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
