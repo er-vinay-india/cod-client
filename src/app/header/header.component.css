@@ -20,3 +20,8 @@ a {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
+
+a.cod-link-highlight {
+    border: 1px solid;
+    border-radius: 10px;
+}
