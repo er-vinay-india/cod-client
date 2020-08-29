@@ -11,10 +11,10 @@ import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'our-products', component: OurProductsComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'order-page', component: OrderPageComponent },
+  { path: 'our-products', component: OurProductsComponent },
   { path: 'product-list', component: ProductListComponent },
   { path: 'product/:id', component: ProductComponent },
 
