@@ -5,11 +5,20 @@
     margin: 0px;
 }
 
+.right-box > div:nth-child(1) {
+    margin: auto;
+}
+
 .right-box-desc {
-    padding: 120px 0px 20px 20px;
     text-align: left;
     font-family: 'Tajawal', sans-serif;
 }
-.col-sm-3{
+.col-sm-3 {
     padding-right: 0px;
+}
+
+.blockquote-footer {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }

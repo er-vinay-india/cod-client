@@ -1,12 +1,22 @@
 .left-box {
     background-color: #593820;
-    color: white;
+    color: #C0A886;
     padding: 0px;
     margin: 0px;
 }
 
+.left-box > div:nth-child(2) {
+    margin: auto;
+}
+
 .left-box-desc {
-    padding: 120px 20px 20px 20px;
+    margin:0px auto;
     text-align: right;
     font-family: 'Tajawal', sans-serif;
+}
+
+.blockquote-footer {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }
