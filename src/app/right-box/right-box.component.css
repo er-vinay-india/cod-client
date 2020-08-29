@@ -1,6 +1,6 @@
 .right-box {
     background-color: #C0A886;
-    color: black;
+    color: #593820;
     padding: 0px;
     margin: 0px;
 }
@@ -18,7 +18,7 @@
 }
 
 .blockquote-footer {
-    color: #000;
+    color: #593820;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
 }

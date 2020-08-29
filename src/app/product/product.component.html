@@ -1,11 +1,13 @@
-<app-header></app-header>
-<div class="container pt-5">
-    <div class="row">
-        <div class="col-sm-4">
-            <app-product-left></app-product-left>
-        </div>
-        <div class="col-sm-8">
-            <app-product-right></app-product-right>
+<app-header-inner></app-header-inner>
+<div class="container-fluid">
+    <div class="mt-5 mb-5">
+        <div class="row">
+            <div class="col-sm-4">
+                <app-product-left [item]="product"></app-product-left>
+            </div>
+            <div class="col-sm-8">
+                <app-product-right [item]="product"></app-product-right>
+            </div>
         </div>
     </div>
 </div>

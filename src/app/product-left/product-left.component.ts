@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-left',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-left.component.css']
 })
 export class ProductLeftComponent implements OnInit {
+
+  @Input() item:any;
 
   constructor() { }
 

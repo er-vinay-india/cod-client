@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ConfigService } from './../config/config.service';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  product: any;
+
+  constructor(
+    private router: Router,
+    private active_route: ActivatedRoute,
+    private configService: ConfigService
+  ) { }
 
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    }
+
+    this.active_route.paramMap.subscribe(
+      params => {
+        let productId = params.get('id');
+        // trick the Router into believing it's last link wasn't previously loaded
+        this.router.navigated = false;
+        // if you need to scroll back to top, here is the right place
+        this.getProduct(productId);
+        window.scrollTo(0, 0);
+      });
   }
 
+  getProduct(productId) {
+    // this.http.get(API_URL + 'api/blog/blog-list-by-category?alias=' + this.alias + '&page=' + page_no).subscribe(
+    this.configService.getProduct(productId).subscribe(
+      (data) => {
+        this.product = data;
+      });
+    }
 }
