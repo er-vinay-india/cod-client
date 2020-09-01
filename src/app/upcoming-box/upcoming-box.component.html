@@ -1,4 +1,4 @@
-<div class="container-fluid cod-upcoming">
+<div class="container-fluid cod-upcoming" *ngIf="upcomingProducts">
     <div class="row pt-5 pb-5">
         <div class="col-sm-4 text-center" *ngFor="let product of upcomingProducts.result.products">
             <app-product-box [product]="product"></app-product-box>
