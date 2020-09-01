@@ -1,1 +1,51 @@
+<nav class="container-fluid navbar navbar-expand-sm" id="cod-header" [ngClass]="'cod-header-' + headerType">
+    <div class="container-fluid">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" id="cod-brand" routerLink="/" routerLinkActive="active">
+            Crazy Over Donuts
+        </a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/order-page" routerLinkActive="active">Orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/product-list" routerLinkActive="active">Product List</a>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn">
+                <a class="nav-link" routerLink="/signin" routerLinkActive="active">Signin</a>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn">
+                <a class="nav-link cod-link-highlight" routerLink="/signup" routerLinkActive="active">Signup</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Header Area -->
 <router-outlet></router-outlet>
+<!-- Footer Area -->
+
+
+<div class="container-fluid pt-5 pb-5 footer">
+    <div class="row">
+        <div class="col-sm-4">
+            <ul class="list-group list-group-flush footer-list">
+                <li class="list-group-item footer-list-item">FAQs</li>
+                <li class="list-group-item footer-list-item">Our Mission</li>
+                <li class="list-group-item footer-list-item">About us</li>
+              </ul>
+        </div>
+        <div class="col-sm-4">
+            <app-newsletter-box></app-newsletter-box>
+        </div>
+        <div class="col-sm-4">
+            <h3>Carzy Over Donuts</h3>
+            <p><i class="fas fa-envelope"></i> support@cod.com</p>
+            <p><i class="fas fa-phone"></i> +918800000000</p>
+            <p><small>Copyright &copy; 2020. All Rights Reserved. </small></p>
+        </div>
+    </div>
+</div>

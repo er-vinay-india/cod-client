@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from './../config/config.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private configService: ConfigService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.configService.logoutUser().subscribe(
+      (data) => {
+        console.log(data);
+      }
+    )
   }
 
 }

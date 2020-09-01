@@ -12,6 +12,15 @@ export class ConfigService {
 
   constructor(private http: HttpClient) { }
 
+  isLoggedIn() {
+    let seedAuth = localStorage.getItem('seedAuth');
+    if(seedAuth == null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   // Register User
   registerUser(post_data: any) {
     return this.http.post(environment.apiUrl + 'registration', post_data).pipe(

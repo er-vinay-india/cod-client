@@ -29,6 +29,8 @@ export class SigninComponent implements OnInit {
 
     this.configService.loginUser(post_data).subscribe(
       (data) => {
+        let dt = data;
+        localStorage.setItem('seedAuth', dt['result'].user_guid);
         console.log(data);
       }
     );

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ConfigService } from './../config/config.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-list',
@@ -24,7 +25,7 @@ export class ProductListComponent implements OnInit {
     }
   
     getUpcomingProducts() {
-      this.configService.getUpcomingProducts()
+      this.configService.getUpcomingProducts().pipe(first())
       .subscribe(
         (data) => {
           this.products = data;
