@@ -26,6 +26,7 @@ import { LeftBoxComponent } from './left-box/left-box.component';
 import { RightBoxComponent } from './right-box/right-box.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartSmallComponent } from './cart-small/cart-small.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { CartSmallComponent } from './cart-small/cart-small.component';
     LeftBoxComponent,
     RightBoxComponent,
     CheckoutComponent,
-    CartSmallComponent
+    CartSmallComponent,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,
