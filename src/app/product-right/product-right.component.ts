@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartServiceService } from './../cart-service.service';
 import { timestamp } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-right',
@@ -12,7 +13,8 @@ export class ProductRightComponent implements OnInit {
   @Input() item: any;
 
   constructor(
-    private cartServiceService: CartServiceService
+    private cartServiceService: CartServiceService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,4 +30,7 @@ export class ProductRightComponent implements OnInit {
     this.cartServiceService.addToCart(post_data);
   }
 
+  buyNow() {
+    this.router.navigate(['/checkout']);
+  }
 }

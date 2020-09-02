@@ -1,0 +1,80 @@
+<div class="container-fluid cod-light-bg">
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3>Select Address</h3>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card" >
+                            <div class="card-body">
+                              <h5 class="card-title">Home</h5>
+                              <p class="card-text">
+                                  B-355, Deen Dayal Nagar
+                                  Near Bharat Mata Mandir
+                                  Behind Central Hotel
+                                  Jhansi 284003
+                                </p>
+                              <a href="#" class="btn btn-primary">
+                                  Select
+                              </a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card" >
+                            <div class="card-body">
+                                <h5 class="card-title">Work</h5>
+                                <p class="card-text">
+                                    B-355, Deen Dayal Nagar
+                                    Near Bharat Mata Mandir
+                                    Behind Central Hotel
+                                    Jhansi 284003
+                                  </p>
+                                <a href="#" class="btn btn-primary">
+                                    Select
+                                </a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card" >
+                            <div class="card-body">
+                                <h5 class="card-title">Default</h5>
+                                <p class="card-text">
+                                    B-355, Deen Dayal Nagar
+                                    Near Bharat Mata Mandir
+                                    Behind Central Hotel
+                                    Jhansi 284003
+                                  </p>
+                                <a href="#" class="btn btn-primary">
+                                    Select
+                                </a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col-sm-12">
+                        <h3>Select Payment Method</h3>
+                        <div class="row">
+                            <div class="col-sm-6">COD</div>
+                            <div class="col-sm-6">NetBanking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <app-cart-small></app-cart-small>
+                <h3>Discount</h3>
+                <form [formGroup]="couponForm">
+                    <div class="form-group">
+                        <input type="text" formControlName="couponCode" placeholder="Coupon Code">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Apply</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

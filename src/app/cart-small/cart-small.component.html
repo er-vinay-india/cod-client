@@ -1,0 +1,28 @@
+    <h3>Cart</h3>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>
+                   <p>
+                    <b>
+                        {{product.title}}
+                    </b>
+                   </p>
+                    <p>
+                        <small>
+                            {{product.guid}}
+                        </small>
+                    </p>
+                </td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.price}}</td>
+            </tr>
+        </tbody>
+    </table>

@@ -24,6 +24,8 @@ import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LeftBoxComponent } from './left-box/left-box.component';
 import { RightBoxComponent } from './right-box/right-box.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { CartSmallComponent } from './cart-small/cart-small.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { RightBoxComponent } from './right-box/right-box.component';
     CartComponent,
     PageNotFoundComponent,
     LeftBoxComponent,
-    RightBoxComponent
+    RightBoxComponent,
+    CheckoutComponent,
+    CartSmallComponent
   ],
   imports: [
     BrowserModule,
