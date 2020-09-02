@@ -8,22 +8,34 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item" *ngIf="isAdmin">
-                <a class="nav-link" routerLink="/order-page" routerLinkActive="active">Orders</a>
+                <a class="nav-link" routerLink="/order-page" routerLinkActive="active" title="Orders">
+                    <i class="fas fa-clipboard-list"></i>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/product-list" routerLinkActive="active">Menu</a>
+                <a class="nav-link" routerLink="/product-list" routerLinkActive="active" title="Products">
+                    <i class="fas fa-layer-group"></i>
+                </a>
             </li>
             <li class="nav-item" *ngIf="!isLoggedIn">
-                <a class="nav-link" routerLink="/signin" routerLinkActive="active">Signin</a>
+                <a class="nav-link" routerLink="/signin" routerLinkActive="active" title="SignIn">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
             </li>
             <li class="nav-item" *ngIf="!isLoggedIn">
-                <a class="nav-link cod-link-highlight" routerLink="/signup" routerLinkActive="active">Signup</a>
+                <a class="nav-link cod-link-highlight" routerLink="/signup" routerLinkActive="active" title="SignUp">
+                    <i class="fas fa-user-plus"></i>
+                </a>
             </li>
             <li class="nav-item" *ngIf="isLoggedIn">
-                <a class="nav-link" routerLink="/cart" routerLinkActive="active">Cart</a>
+                <a class="nav-link" routerLink="/cart" routerLinkActive="active" title="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
             </li>
             <li class="nav-item" *ngIf="isLoggedIn">
-                <a class="nav-link" (click)="logout()">Signout</a>
+                <a class="nav-link" (click)="logout()" title="SignOut">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
             </li>
         </ul>
     </div>
