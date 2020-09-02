@@ -5,8 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { LeftAreaComponent } from './left-area/left-area.component';
 import { MainAreaComponent } from './main-area/main-area.component';
 import { ProductComponent } from './product/product.component';
@@ -26,15 +24,13 @@ import { OtherFooterComponent } from './other-footer/other-footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { HeaderInnerComponent } from './header-inner/header-inner.component';
 import { CartComponent } from './cart/cart.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
     LeftAreaComponent,
     MainAreaComponent,
     ProductComponent,
@@ -54,8 +50,8 @@ import { CartComponent } from './cart/cart.component';
     SignupComponent,
     SigninComponent,
     ProductListComponent,
-    HeaderInnerComponent,
     CartComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

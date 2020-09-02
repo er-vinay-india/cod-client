@@ -33,8 +33,7 @@ export class ProductComponent implements OnInit {
       });
   }
 
-  getProduct(productId) {
-    // this.http.get(API_URL + 'api/blog/blog-list-by-category?alias=' + this.alias + '&page=' + page_no).subscribe(
+  getProduct(productId: any) {
     this.configService.getProduct(productId).subscribe(
       (data) => {
         this.product = data;

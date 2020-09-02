@@ -8,11 +8,11 @@ import { SigninComponent } from './signin/signin.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'order-page', component: OrderPageComponent },
@@ -24,6 +24,8 @@ const routes: Routes = [
     canActivate: [AuthGuard], 
     component: CartComponent 
   },
+  { path: '', component: HomeComponent },
+  { path: '**', component: PageNotFoundComponent },
 
 ];
 

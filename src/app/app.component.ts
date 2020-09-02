@@ -11,12 +11,19 @@ export class AppComponent {
   title = 'Crazy Over Donuts';
   headerType = 'default'; // 3 types [ default, inner, legal ]
   isLoggedIn = false;
+  isAdmin = false;
 
   constructor(
     private router: Router,
     private configService: ConfigService
   ) {
     router.events.subscribe( (event) => ( event instanceof NavigationEnd ) && this.handleRouteChange() )
+
+    if(configService.isAdmin()) {
+      this.isAdmin = true;
+    } else {
+      this.isAdmin = false;
+    }
 
     if(configService.isLoggedIn()) {
       this.isLoggedIn = true;
@@ -49,4 +56,11 @@ export class AppComponent {
       this.headerType = 'inner';
     }
   };
+
+  logout() {
+    window.localStorage.removeItem('seedAuth');
+    window.localStorage.removeItem('isAdmin');
+    window.localStorage.removeItem('isLoggedIn');
+    window.location.reload(true);
+  }
 }

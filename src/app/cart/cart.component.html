@@ -1,6 +1,5 @@
-<app-header-inner></app-header-inner>
-<div class="container-fluid">
-    <div class="container mt-5 mb-5">
+<div class="container-fluid cod-light-bg">
+    <div class="container pt-5 pb-5">
         <h3>Cart</h3>
         <table class="table table-bordered table-hover">
             <thead>
@@ -15,11 +14,14 @@
                 <tr *ngFor="let product of products">
                     <td>{{product.guid}}</td>
                     <td>{{product.title}}</td>
-                    <td>{{product.quantity}}</td>
+                    <td>
+                        <a><i class="fas fa-minus-circle"></i></a>
+                        {{product.quantity}}
+                        <a><i class="fas fa-plus-circle"></i></a>
+                    </td>
                     <td>{{product.price}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-<app-footer></app-footer>

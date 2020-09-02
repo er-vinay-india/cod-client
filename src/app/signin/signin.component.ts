@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ConfigService } from './../config/config.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -15,7 +16,8 @@ export class SigninComponent implements OnInit {
   });
 
   constructor(
-    private configService: ConfigService
+    private configService: ConfigService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,9 +31,24 @@ export class SigninComponent implements OnInit {
 
     this.configService.loginUser(post_data).subscribe(
       (data) => {
-        let dt = data;
-        localStorage.setItem('seedAuth', dt['result'].user_guid);
-        console.log(data);
+        let response = data;
+        if(response && response['result'].user_guid) {
+          
+          localStorage.setItem('seedAuth', response['result'].user_guid);
+          localStorage.setItem('isLoggedIn', 'true');
+          
+          if(response['result'].user.is_admin) {
+            localStorage.setItem('isAdmin', 'true');
+          }
+          
+          this.router.navigate(['/']).then(function() {
+            window.location.reload(true);
+          });
+        } else {
+          alert("Invalid Response");
+        }
+      },
+      () => {
       }
     );
   }

@@ -13,12 +13,11 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
 
   isLoggedIn() {
-    let seedAuth = localStorage.getItem('seedAuth');
-    if(seedAuth == null) {
-      return false;
-    } else {
-      return true;
-    }
+    return localStorage.getItem('isLoggedIn');
+  }
+
+  isAdmin() {
+    return localStorage.getItem('isAdmin');
   }
 
   // Register User
