@@ -22,6 +22,8 @@ import { SigninComponent } from './signin/signin.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LeftBoxComponent } from './left-box/left-box.component';
+import { RightBoxComponent } from './right-box/right-box.component';
 
 
 @NgModule({
@@ -44,6 +46,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProductListComponent,
     CartComponent,
     PageNotFoundComponent,
+    LeftBoxComponent,
+    RightBoxComponent
   ],
   imports: [
     BrowserModule,
