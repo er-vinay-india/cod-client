@@ -1,4 +1,4 @@
-    <h3>Cart</h3>
+    <h3>Order Product</h3>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -22,7 +22,25 @@
                     </p>
                 </td>
                 <td>{{product.quantity}}</td>
-                <td>{{product.price}}</td>
+                <td><i class="fas fa-rupee-sign"></i> {{product.price}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <b>Subtotal</b>
+                </td>
+                <td><i class="fas fa-rupee-sign"></i> 2800</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <b>Discount Applied</b>
+                </td>
+                <td><i class="fas fa-rupee-sign"></i> -300</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <b>Total Price</b>
+                </td>
+                <td><i class="fas fa-rupee-sign"></i> 2300</td>
             </tr>
         </tbody>
     </table>
