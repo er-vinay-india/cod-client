@@ -8,10 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductLeftComponent implements OnInit {
 
   @Input() item:any;
+  myThumbnail: any;
+  myFullresImage: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.myThumbnail = "assets/img/1.png";
+    this.myFullresImage = "assets/img/1-zoom.png";
   }
 
 }

@@ -27,7 +27,7 @@ import { RightBoxComponent } from './right-box/right-box.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartSmallComponent } from './cart-small/cart-small.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
-
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,8 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxImageZoomModule
   ],
   providers: [],
   bootstrap: [AppComponent]
