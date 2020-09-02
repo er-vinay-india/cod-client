@@ -10,11 +10,9 @@
         <tbody>
             <tr *ngFor="let product of products">
                 <td>
-                   <p>
-                    <b>
+                    <a routerLink="/product/{{product.guid}}">
                         {{product.title}}
-                    </b>
-                   </p>
+                    </a>
                     <p>
                         <small>
                             {{product.guid}}
