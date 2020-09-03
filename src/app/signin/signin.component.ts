@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ConfigService } from './../config/config.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -15,12 +15,17 @@ export class SigninComponent implements OnInit {
     password: new FormControl('')
   });
 
+  return: string = '';
+
   constructor(
     private configService: ConfigService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute 
   ) { }
 
   ngOnInit(): void {
+    this.route.queryParams
+      .subscribe(params => this.return = params['return'] || '/');
   }
 
   onSubmit() {
@@ -41,7 +46,7 @@ export class SigninComponent implements OnInit {
             localStorage.setItem('isAdmin', 'true');
           }
           
-          this.router.navigate(['/']).then(function() {
+          this.router.navigateByUrl(this.return).then(function() {
             window.location.reload(true);
           });
         } else {
