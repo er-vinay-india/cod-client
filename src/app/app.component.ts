@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { ConfigService } from './config/config.service';
 import { slideInAnimation, fader } from './animation';
+import { StorageService } from './storage.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    private configService: ConfigService
+    private configService: ConfigService,
+    private storageService: StorageService
   ) {
     router.events.subscribe( (event) => ( event instanceof NavigationEnd ) && this.handleRouteChange() )
 
@@ -67,9 +69,12 @@ export class AppComponent {
   };
 
   logout() {
-    window.localStorage.removeItem('seedAuth');
-    window.localStorage.removeItem('isAdmin');
-    window.localStorage.removeItem('isLoggedIn');
-    window.location.reload(true);
+    this.storageService.removeAuthInfo().subscribe(
+      (data) => {
+        if(data['status'] = 'success') {
+          this.storageService.removeAuthInfoLocal()
+        }
+      }
+    );
   }
 }

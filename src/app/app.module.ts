@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +34,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { OurMissionComponent } from './our-mission/our-mission.component';
 import { CompanyNavComponent } from './company-nav/company-nav.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,11 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     ReactiveFormsModule,
     NgxImageZoomModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
