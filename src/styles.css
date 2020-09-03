@@ -4,6 +4,19 @@ html {
     scroll-behavior: smooth;
   }
 
+  ol.breadcrumb {
+    background: none;
+    height: 10px;
+    line-height: 10px;
+    font-size: 12px;
+    font-weight: 100;
+    padding: 0;
+}
+
+.breadcrumb-item > a, .breadcrumb-item > b {
+    color: #593820;
+}
+
 /* 
 
   div.container-fluid { 

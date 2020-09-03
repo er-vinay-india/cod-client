@@ -15,7 +15,6 @@ import { AccordianBoxComponent } from './accordian-box/accordian-box.component';
 import { UpcomingBoxComponent } from './upcoming-box/upcoming-box.component';
 import { NewsletterBoxComponent } from './newsletter-box/newsletter-box.component';
 import { ProductBoxComponent } from './product-box/product-box.component';
-import { OurProductsComponent } from './our-products/our-products.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { OtherFooterComponent } from './other-footer/other-footer.component';
 import { SignupComponent } from './signup/signup.component';
@@ -35,6 +34,7 @@ import { OurMissionComponent } from './our-mission/our-mission.component';
 import { CompanyNavComponent } from './company-nav/company-nav.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { TokenInterceptor } from './token.interceptor';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,6 @@ import { TokenInterceptor } from './token.interceptor';
     UpcomingBoxComponent,
     NewsletterBoxComponent,
     ProductBoxComponent,
-    OurProductsComponent,
     OrderPageComponent,
     OtherFooterComponent,
     SignupComponent,
@@ -65,6 +64,7 @@ import { TokenInterceptor } from './token.interceptor';
     AboutUsComponent,
     OurMissionComponent,
     CompanyNavComponent,
+    AdminProductsComponent,
     ForgetPasswordComponent
   ],
   imports: [
