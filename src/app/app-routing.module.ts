@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
-import { OurProductsComponent } from './our-products/our-products.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { OrderPageComponent } from './order-page/order-page.component';
@@ -15,6 +14,7 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { FaqComponent } from './faq/faq.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { OurMissionComponent } from './our-mission/our-mission.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
 
 
 const routes: Routes = [
@@ -38,7 +38,7 @@ const routes: Routes = [
     component: OrderSuccessComponent, 
     data: {animation: 'OrderSuccess'}
   },
-  { path: 'our-products', component: OurProductsComponent, data: {animation: 'OurProducts'} },
+  { path: 'admin-products', component: AdminProductsComponent, data: {animation: 'AdminProduct'} },
   { path: 'product-list', component: ProductListComponent, data: {animation: 'ProductList'} },
   { path: 'product/:id', component: ProductComponent, data: {animation: 'Product'} },
   { 
