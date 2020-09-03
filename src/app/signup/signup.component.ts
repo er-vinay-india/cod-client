@@ -10,8 +10,7 @@ import { ConfigService } from './../config/config.service';
 export class SignupComponent implements OnInit {
 
   signupForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+    name: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl('')
   });
@@ -25,8 +24,7 @@ export class SignupComponent implements OnInit {
   
   onSubmit() {
     let post_data = {
-      first_name: this.signupForm.value.firstName,
-      last_name: this.signupForm.value.lastName,
+      name: this.signupForm.value.name,
       email: this.signupForm.value.email,
       password: this.signupForm.value.password
     };
