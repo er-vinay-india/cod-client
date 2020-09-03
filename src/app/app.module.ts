@@ -29,6 +29,11 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CartSmallComponent } from './cart-small/cart-small.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { FaqComponent } from './faq/faq.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { OurMissionComponent } from './our-mission/our-mission.component';
+import { CompanyNavComponent } from './company-nav/company-nav.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,12 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
     RightBoxComponent,
     CheckoutComponent,
     CartSmallComponent,
-    OrderSuccessComponent
+    OrderSuccessComponent,
+    FaqComponent,
+    AboutUsComponent,
+    OurMissionComponent,
+    CompanyNavComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,

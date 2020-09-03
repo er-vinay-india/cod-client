@@ -12,6 +12,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuard } from './auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
+import { FaqComponent } from './faq/faq.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { OurMissionComponent } from './our-mission/our-mission.component';
 
 
 const routes: Routes = [
@@ -44,6 +47,9 @@ const routes: Routes = [
     component: CartComponent, 
     data: {animation: 'Cart'} 
   },
+  { path: 'our-mission', component: OurMissionComponent, data: {animation: 'OurMission'} },
+  { path: 'faq', component: FaqComponent, data: {animation: 'Faq'} },
+  { path: 'about-us', component: AboutUsComponent, data: {animation: 'AboutUs'} },
   { path: '', component: HomeComponent, data: {animation: 'HomePage' } },
   { path: '**', component: PageNotFoundComponent, data: {animation: 'PageNotFound'} },
 
