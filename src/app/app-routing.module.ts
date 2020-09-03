@@ -15,33 +15,37 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 
 
 const routes: Routes = [
-  { path: 'signup', component: SignupComponent },
-  { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent, data: {animation: 'Signup'} },
+  { path: 'signin', component: SigninComponent, data: {animation: 'Signin'} },
   { 
     path: 'order-page',
     canActivate: [AuthGuard],  
-    component: OrderPageComponent 
+    component: OrderPageComponent, 
+    data: {animation: 'OrderPage'} 
   },
   { 
     path: 'checkout',
     canActivate: [AuthGuard],  
-    component: CheckoutComponent 
+    component: CheckoutComponent, 
+    data: {animation: 'Checkout'} 
   },
   { 
     path: 'order-success',
     canActivate: [AuthGuard],  
-    component: OrderSuccessComponent
+    component: OrderSuccessComponent, 
+    data: {animation: 'OrderSuccess'}
   },
-  { path: 'our-products', component: OurProductsComponent },
-  { path: 'product-list', component: ProductListComponent },
-  { path: 'product/:id', component: ProductComponent },
+  { path: 'our-products', component: OurProductsComponent, data: {animation: 'OurProducts'} },
+  { path: 'product-list', component: ProductListComponent, data: {animation: 'ProductList'} },
+  { path: 'product/:id', component: ProductComponent, data: {animation: 'Product'} },
   { 
     path: 'cart',
     canActivate: [AuthGuard], 
-    component: CartComponent 
+    component: CartComponent, 
+    data: {animation: 'Cart'} 
   },
-  { path: '', component: HomeComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '', component: HomeComponent, data: {animation: 'HomePage' } },
+  { path: '**', component: PageNotFoundComponent, data: {animation: 'PageNotFound'} },
 
 ];
 

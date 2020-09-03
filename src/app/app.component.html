@@ -43,7 +43,9 @@
 
 
 <!-- Header Area -->
-<router-outlet></router-outlet>
+<main [@routeAnimations]="prepareRoute(outlet)" class="cod-light-bg">
+    <router-outlet #outlet="outlet" class="maincontent"></router-outlet>
+</main>
 <!-- Footer Area -->
 
 

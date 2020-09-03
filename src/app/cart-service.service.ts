@@ -29,6 +29,12 @@ export class CartServiceService {
     return cartArray;
   }
 
+  getCartCount() {
+    let cartString = localStorage.getItem('_user_cart_');
+    let cartArray = JSON.parse(cartString);
+    return cartArray.length;
+  }
+
   removeFromCart(post_data: any) {
     let cartString = localStorage.getItem('_user_cart_');
     let cartArray = JSON.parse(cartString);
