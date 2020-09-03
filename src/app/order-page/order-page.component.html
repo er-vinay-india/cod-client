@@ -1,53 +1,55 @@
 <div class="container-fluid">
-    <div class="head">
-        <h1>Orders</h1>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><b>Orders</b></li>
-            </ol>
-        </nav>
-    </div>
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th scope="col">Order ID</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Status</th>
-                <th scope="col">Total(Rs.)</th>
-                <th scope="col">Date Added</th>
-                <th scope="col">Date Modified</th>
-                <th scope="col">Edit/Delete</th>
-            </tr>
-        </thead>
-        <tbody *ngIf="orders">
-            <tr *ngFor="let order of orders.result.orders">
-                <th scope="row">1</th>
-                <td>{{order.order_guid}}</td>
-                <td>Shivhare</td>
-                <td>Pending</td>
-                <td>890</td>
-                <td>14/08/2020</td>
-                <td>16/08/2020</td>
-                <td>edit/delete</td>
-            </tr>
-        </tbody>
-        <tbody *ngIf="!orders || orders.result.orders.length < 1">
-            <td colspan="8" class="text-center">No Order</td>
-        </tbody>
-    </table>
-    <div class="row">
-        <div class="col-sm-12">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-end">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
+    <div class="container pt-5 pb-5">
+        <div class="head">
+            <h1>Orders</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><b>Orders</b></li>
+                </ol>
             </nav>
+        </div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Total(Rs.)</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col">Date Modified</th>
+                    <th scope="col">Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="orders">
+                <tr *ngFor="let order of orders.result.orders">
+                    <th scope="row">1</th>
+                    <td>{{order.order_guid}}</td>
+                    <td>Shivhare</td>
+                    <td>Pending</td>
+                    <td>890</td>
+                    <td>14/08/2020</td>
+                    <td>16/08/2020</td>
+                    <td>edit/delete</td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="!orders || orders.result.orders.length < 1">
+                <td colspan="8" class="text-center">No Order</td>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-sm-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 </div>
