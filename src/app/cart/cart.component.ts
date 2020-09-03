@@ -22,4 +22,16 @@ export class CartComponent implements OnInit {
     this.products = this.cartServiceService.getCart();
   }
 
+  decQty(product) {
+    if(product.quantity > 0) {
+      product.quantity--;
+    }
+  } 
+
+  incQty(product) {
+    if(product.quantity < 100) {
+      product.quantity++;
+    }
+  }
+
 }

@@ -14,10 +14,14 @@
                 <tr *ngFor="let product of products">
                     <td>{{product.guid}}</td>
                     <td>{{product.title}}</td>
-                    <td>
-                        <a><i class="fas fa-minus-circle"></i></a>
+                    <td class="cod-cart-qty">
+                        <a (click)="decQty(product)">
+                            <i class="fas fa-minus-circle"></i>
+                        </a>
                         {{product.quantity}}
-                        <a><i class="fas fa-plus-circle"></i></a>
+                        <a (click)="incQty(product)">
+                            <i class="fas fa-plus-circle"></i>
+                        </a>
                     </td>
                     <td>{{product.price}}</td>
                 </tr>
