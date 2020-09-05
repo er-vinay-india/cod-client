@@ -25,8 +25,9 @@ export class TokenInterceptor implements HttpInterceptor {
       }
     });
 
+    return next.handle(request);
+    
     if (request.method !== 'GET') {
-      return next.handle(request);
     }
 
     const cachedResponse = this.cache.get(request.url);

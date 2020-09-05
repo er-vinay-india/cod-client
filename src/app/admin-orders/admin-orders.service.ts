@@ -34,6 +34,13 @@ export class AdminOrdersService {
     );
   }
 
+  // OrderAdmin Products
+  registerAdminOrders(post_data: any) {
+    return this.http.post(environment.apiUrl + 'admin-orders', post_data).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

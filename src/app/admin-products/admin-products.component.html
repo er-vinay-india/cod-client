@@ -10,11 +10,13 @@
             </nav>
         </div>
         <div class="head float-right mb-2">
-            <button type="button" class="btn btn-primary" (click)="openProductForm()">Add</button>
+            <button type="button" class="btn btn-primary" (click)="openProductForm()">Add New</button>
         </div>
         <div class="mt-5 mb-5" [ngClass]="isAddActive">
             <h4>Add Product</h4>
             <form class="was-validated" [formGroup]="productForm" (ngSubmit)="onSubmitAddProduct()">
+                <!-- any hidden values here -->
+                <input type="hidden" formControlName="productGuid">
                 <div class="form-group">
                   <label for="product-title">Product Title:</label>
                   <input formControlName="productTitle" type="text" class="form-control" id="product-title" placeholder="Enter Product Title" required>
@@ -55,7 +57,7 @@
                     <td>{{ product.quantity }}</td>
                     <td><i class="fas fa-rupee-sign"></i> {{ product.price }}</td>
                     <td>
-                        edit/delete
+                        <button (click)="openProductForm(product.guid)" type="button" class="btn btn-primary">Edit</button> / <button (click)="deleteProduct(product.guid)" type="button" class="btn btn-primary">Delete</button>
                     </td>
                 </tr>
             </tbody>

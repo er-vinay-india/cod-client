@@ -42,9 +42,6 @@ export class ConfigService {
     );
   }
 
-
-
-
   getUserDetails() {
     return this.http.get(environment.apiUrl + 'user/all')
     .pipe(
