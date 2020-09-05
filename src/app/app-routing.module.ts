@@ -4,7 +4,7 @@ import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
-import { OrderPageComponent } from './order-page/order-page.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
@@ -21,10 +21,10 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent, data: {animation: 'Signup'} },
   { path: 'signin', component: SigninComponent, data: {animation: 'Signin'} },
   { 
-    path: 'order-page',
+    path: 'admin-orders',
     canActivate: [AuthGuard],  
-    component: OrderPageComponent, 
-    data: {animation: 'OrderPage'} 
+    component: AdminOrdersComponent, 
+    data: { animation: 'AdminOrders' } 
   },
   { 
     path: 'checkout',

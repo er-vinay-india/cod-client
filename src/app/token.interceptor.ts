@@ -3,13 +3,16 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { tap, shareReplay } from 'rxjs/operators';
 import { StorageService } from './storage.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
+  private cache = new Map<string, any>();
 
   constructor(
     private storageService: StorageService
@@ -21,6 +24,22 @@ export class TokenInterceptor implements HttpInterceptor {
         Authorization: `Bearer ${this.storageService.getAuthToken()}`
       }
     });
-    return next.handle(request);
+
+    if (request.method !== 'GET') {
+      return next.handle(request);
+    }
+
+    const cachedResponse = this.cache.get(request.url);
+    if (cachedResponse) {
+      return of(cachedResponse);
+    }
+
+    return next.handle(request).pipe(
+      tap(event => {
+        if (event instanceof HttpResponse) {
+          this.cache.set(request.url, event);
+        }
+      })
+    );
   }
 }

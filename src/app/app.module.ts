@@ -15,7 +15,7 @@ import { AccordianBoxComponent } from './accordian-box/accordian-box.component';
 import { UpcomingBoxComponent } from './upcoming-box/upcoming-box.component';
 import { NewsletterBoxComponent } from './newsletter-box/newsletter-box.component';
 import { ProductBoxComponent } from './product-box/product-box.component';
-import { OrderPageComponent } from './order-page/order-page.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { OtherFooterComponent } from './other-footer/other-footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
@@ -48,7 +48,7 @@ import { AdminProductsComponent } from './admin-products/admin-products.componen
     UpcomingBoxComponent,
     NewsletterBoxComponent,
     ProductBoxComponent,
-    OrderPageComponent,
+    AdminOrdersComponent,
     OtherFooterComponent,
     SignupComponent,
     SigninComponent,

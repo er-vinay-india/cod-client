@@ -8,28 +8,28 @@ import { environment } from './../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class OrderService {
+export class AdminProductsService {
 
   constructor(private http: HttpClient) { }
 
-  getOrders() {
-    return this.http.get(environment.apiUrl + 'order/all')
+  getProducts() {
+    return this.http.get(environment.apiUrl + 'product/all')
     .pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
     );
   }
 
-  getOrderDetails(orderId) {
-    return this.http.get(environment.apiUrl + 'order/single/' + orderId)
+  getProductDetails(productId) {
+    return this.http.get(environment.apiUrl + 'product/single/' + productId)
     .pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
     );
   }
 
-  addOrder(post_data: any) {
-    return this.http.post(environment.apiUrl + 'order', post_data).pipe(
+  addProduct(post_data: any) {
+    return this.http.post(environment.apiUrl + 'product', post_data).pipe(
       catchError(this.handleError)
     );
   }
@@ -50,3 +50,4 @@ export class OrderService {
       'Something bad happened; please try again later.');
   }
 }
+
