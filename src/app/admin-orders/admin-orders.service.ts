@@ -34,8 +34,14 @@ export class AdminOrdersService {
     );
   }
 
+  deleteOrder(guid: any) {
+    return this.http.delete(environment.apiUrl + 'order/' + guid).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   // OrderAdmin Products
-  registerAdminOrders(post_data: any) {
+  addAdminOrders(post_data: any) {
     return this.http.post(environment.apiUrl + 'admin-orders', post_data).pipe(
       catchError(this.handleError)
     );
